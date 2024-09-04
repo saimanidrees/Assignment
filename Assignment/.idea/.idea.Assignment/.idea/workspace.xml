@@ -8,6 +8,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/GameData/MyScripts/OnClickEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/AdsPlugin/AdsScripts/Callbacks.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/GameData/MyScripts/Student.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -58,7 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1725369678624</updated>
       <workItem from="1725369689325" duration="3421000" />
-      <workItem from="1725424472552" duration="9979000" />
+      <workItem from="1725424472552" duration="10065000" />
+      <workItem from="1725435679382" duration="10296000" />
     </task>
     <servers />
   </component>

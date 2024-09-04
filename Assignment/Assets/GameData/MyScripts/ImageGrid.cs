@@ -1,11 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 namespace GameData.MyScripts
 {
     public class ImageGrid : MonoBehaviour
     {
-        [SerializeField] private ImageData imageData; // Assign the sprite in the Inspector
+        [SerializeField] private ImageData imageData; // Assign the data in the Inspector
         [SerializeField] private int rows = 3; // Number of rows in the grid
         [SerializeField] private int columns = 3; // Number of columns in the grid
         [SerializeField] private Vector2 imageSize = new Vector2(100, 100); // Size of each image
@@ -17,7 +16,7 @@ namespace GameData.MyScripts
         }
         private void CreateGridLayout()
         {
-            var gridObject = new GameObject(Constants.ImageGridString);
+            var gridObject = new GameObject(Constants.CardsGridString);
             gridObject.transform.SetParent(this.transform);
             var gridRectTransform = gridObject.AddComponent<RectTransform>();
             gridRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
@@ -36,8 +35,9 @@ namespace GameData.MyScripts
             var selectedIcons = strategy.GenerateIconPlacement(imageData.iconsInventory.iconsData, totalElements);
             for (var i = 0; i < totalElements; i++)
             {
-                var imageName = Constants.ImageGridString + i;
-                var imageObject = ImageFactory.CreateCard(imageName, imageData.mainSprite, selectedIcons[i], imageSize, childIconSize);
+                var imageName = Constants.CardImageString + i;
+                var imageObject = ImageFactory.CreateCard(imageName, imageData.mainSprite, imageData.cardAnimatorController, selectedIcons[i], 
+                    imageSize, childIconSize);
                 imageObject.transform.SetParent(gridObject.transform, false);
             }
         }

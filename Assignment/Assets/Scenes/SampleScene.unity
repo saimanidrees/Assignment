@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 195472639}
   - component: {fileID: 195472640}
+  - component: {fileID: 195472641}
   m_Layer: 0
   m_Name: ImageGrid
   m_TagString: Untagged
@@ -169,12 +170,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageData:
     mainSprite: {fileID: 21300000, guid: 4a04331efc57198479fe48d72de4f5c3, type: 3}
+    cardAnimatorController: {fileID: 9100000, guid: f9c52833cce31524c982e73d2e3ebb0c, type: 2}
     iconsInventory: {fileID: 11400000, guid: 5a13d7e18a683a24f94f5b653680adf6, type: 2}
   rows: 4
   columns: 4
   imageSize: {x: 200, y: 200}
   childIconSize: {x: 150, y: 150}
   spacing: 10
+--- !u!114 &195472641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195472638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad259df95ed85e14dac85e4b38a63a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardIdToCheck: 0
+  isCardSelected: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +429,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993554545}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
