@@ -333,8 +333,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.Editor.ref.dll"
@@ -356,7 +354,10 @@
 "Assets/GameData/MyScripts/IconsInventory.cs"
 "Assets/GameData/MyScripts/ImageFactory.cs"
 "Assets/GameData/MyScripts/ImageGrid.cs"
+"Assets/GameData/MyScripts/LevelData.cs"
+"Assets/GameData/MyScripts/LevelsHandler.cs"
 "Assets/GameData/MyScripts/RandomIconPlacementStrategy.cs"
+"Assets/GameData/MyScripts/StatsHandler.cs"
 -langversion:9.0
 
 /deterministic

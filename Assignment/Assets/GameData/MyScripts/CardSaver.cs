@@ -21,6 +21,7 @@ namespace GameData.MyScripts
             }
             else
             {
+                EventsManager.InvokeOnClickAblesLimitReached(true);
                 var card = _cardIds.Pop();
                 EventsManager.OnCardCheck += newCard.GetCardCheckingCallBack();
                 EventsManager.InvokeOnCardCheck(card);

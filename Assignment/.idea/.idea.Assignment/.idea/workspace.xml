@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/GameData/MyScripts/OnClickEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/GameData/MyScripts/OnClickEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/AdsPlugin/AdsScripts/Callbacks.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Pass-on-Fail/Pass Or Fail/Assets/GameData/MyScripts/Student.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -62,6 +62,7 @@
       <workItem from="1725369689325" duration="3421000" />
       <workItem from="1725424472552" duration="10065000" />
       <workItem from="1725435679382" duration="10296000" />
+      <workItem from="1725449372666" duration="12557000" />
     </task>
     <servers />
   </component>

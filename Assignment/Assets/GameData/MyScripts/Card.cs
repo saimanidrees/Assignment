@@ -5,18 +5,26 @@ namespace GameData.MyScripts
 {
     public class Card : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
-        private int _cardId;
-        private Animator _animator;
-        private bool _isCurrentlyClicked = false;
+        [SerializeField] private int cardId; // Card Id to compare
+        private Animator _animator; // To Play animations
+        private bool _isCurrentlyClicked = false, _isNotClickAble = false; // Flags to control clicking
+        private void OnEnable()
+        {
+            EventsManager.OnClickAblesLimitReached += SetIsNotClickAble;
+        }
+        private void OnDisable()
+        {
+            EventsManager.OnClickAblesLimitReached -= SetIsNotClickAble;
+        }
         public void SetCard(int newId, Animator animator, RuntimeAnimatorController newRuntimeAnimator)
         {
-            _cardId = newId;
+            cardId = newId;
             _animator = animator;
             _animator.runtimeAnimatorController = newRuntimeAnimator;
         }
-        public int GetCardId()
+        private int GetCardId()
         {
-            return _cardId;
+            return cardId;
         }
         public Action<Card> GetCardCheckingCallBack()
         {
@@ -24,38 +32,55 @@ namespace GameData.MyScripts
         }
         private void CheckCard(Card otherCard)
         {
-            if (_cardId == otherCard.GetCardId())
+            if (cardId == otherCard.GetCardId())
             {
-                DisableCard();
-                otherCard.DisableCard();
+                InvokeDisableCard();
+                otherCard.InvokeDisableCard();
+                EventsManager.InvokeOnScoreIncreases();
             }
             else
             {
-                Debug.Log("Checking Card");
-                HideCard();
-                otherCard.HideCard();
+                InvokeHideCard();
+                otherCard.InvokeHideCard();
             }
+            EventsManager.InvokeOnTurnsIncreases();
             EventsManager.OnCardCheck -= otherCard.GetCardCheckingCallBack();
+            EventsManager.OnCardCheck -= GetCardCheckingCallBack();
+            Invoke(nameof(InvokeClicksLimitReached), 1.5f);
+        }
+        private void InvokeHideCard()
+        {
+            Invoke(nameof(HideCard), 1.25f);
         }
         private void HideCard()
         {
-            Debug.Log("HideCard");
-            Invoke(nameof(HidingCard), 1.25f);
+            _animator.Play(Constants.CardHideString);
+            _isCurrentlyClicked = false;
+        }
+        private void InvokeDisableCard()
+        {
+            Invoke(nameof(DisableCard), 1.25f);
         }
         private void DisableCard()
         {
-            _animator.Play("disableCard");
-        }
-        private void HidingCard()
-        {
+            _animator.Play(Constants.DisableCardString);
             _isCurrentlyClicked = false;
-            _animator.Play("cardHide");
+        }
+        private void SetIsNotClickAble(bool flag)
+        {
+            _isNotClickAble = flag;
+        }
+        private void InvokeClicksLimitReached()
+        {
+               EventsManager.InvokeOnClickAblesLimitReached(false);
         }
         public void OnPointerUp(PointerEventData eventData)
         {
+            if(_isNotClickAble) return;
             if(_isCurrentlyClicked) return;
             _isCurrentlyClicked = true;
-            _animator.Play("cardShow");
+            if (!_animator) _animator = GetComponent<Animator>();
+            _animator.Play(Constants.CardShowString);
             EventsManager.InvokeOnCardSelection(this);
         }
         public void OnPointerDown(PointerEventData eventData)
