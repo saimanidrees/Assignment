@@ -1,10 +1,15 @@
 using UnityEngine;
 namespace GameData.MyScripts
 {
-    [CreateAssetMenu(fileName = "IconsData", menuName = "ScriptableObjects/IconsInventory", order = 1)]
+    [CreateAssetMenu(fileName = "IconsInventory", menuName = "ScriptableObjects/IconsInventory", order = 1)]
     public class IconsInventory : ScriptableObject
     {
+        public IconData[] iconsData; // Array of child icons
+    }
+    [System.Serializable]
+    public class IconData
+    {
         public Sprite sprite; // The icon sprite
-        public string id; // Unique ID for this icon
+        public int id; // Unique ID for this icon
     }
 }

@@ -169,51 +169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageData:
     mainSprite: {fileID: 21300000, guid: 4a04331efc57198479fe48d72de4f5c3, type: 3}
-    childSprites:
-    - {fileID: 21300000, guid: 5e580fe415974a64d855549e093b5b8e, type: 3}
-    - {fileID: 21300000, guid: 97cda79df2978ed4a9a0092187934ab4, type: 3}
-    - {fileID: 21300000, guid: 417d846d03ecba24396a5d63fe8a7318, type: 3}
-    - {fileID: 21300000, guid: f8e187e8f35a4aa47a97c91dedc04a27, type: 3}
-    - {fileID: 21300000, guid: 03724b2cf5bd9c44fb7930dc8949f940, type: 3}
-    - {fileID: 21300000, guid: 70875929c9e694745af8873dce261de0, type: 3}
-    - {fileID: 21300000, guid: 9ceedae1fd501e247b89a13d10056c8e, type: 3}
-    - {fileID: 21300000, guid: 00b57c811f71caa40a87882abbbad9e8, type: 3}
-    - {fileID: 21300000, guid: ee06a5be0bf96274bb317edac861bbbc, type: 3}
-    - {fileID: 21300000, guid: af598ae341fca7b4496aecc44a76ddf0, type: 3}
-    - {fileID: 21300000, guid: 4e6a857d13be02b4cbb294a9af9fa2bd, type: 3}
-    - {fileID: 21300000, guid: 36a52f14250cc6947a6f7dddb54bac8c, type: 3}
-    - {fileID: 21300000, guid: 5311ab354e0edda4492a0fafcd1e7eba, type: 3}
-    - {fileID: 21300000, guid: a6f14adfae509ad44b72d85b34903f55, type: 3}
-    - {fileID: 21300000, guid: 263a3aa4f7e93914b86044825b1ca8c3, type: 3}
-    - {fileID: 21300000, guid: 03ebebf28aa99b247bb79df6f134d7ae, type: 3}
-    - {fileID: 21300000, guid: 3e770627bcc713b4fbfa460a8f9af65f, type: 3}
-    - {fileID: 21300000, guid: a95665ff05ed91b489daaa9f034c5cc8, type: 3}
-    - {fileID: 21300000, guid: 6d96270042770b949be066863486ded5, type: 3}
-    - {fileID: 21300000, guid: 12c6fc8a163e3eb4baf5ff1b665efa21, type: 3}
-    - {fileID: 21300000, guid: e4c34fbcb8c100a44b73a5af48a5de1e, type: 3}
-    - {fileID: 21300000, guid: bc5a1fb26d3d6684896fa08c819c67c0, type: 3}
-    - {fileID: 21300000, guid: 9926379ecd21e8045a246db544f63ea2, type: 3}
-    - {fileID: 21300000, guid: c688271abf04ebf4ab2c6ff5730ea01a, type: 3}
-    - {fileID: 21300000, guid: 972c9e6a4f2b0254788be2188954bc34, type: 3}
-    - {fileID: 21300000, guid: 42018cde4be34d24ea98204cb96a2c16, type: 3}
-    - {fileID: 21300000, guid: 8d738f2117629e04499dbe1b95e1ee8a, type: 3}
-    - {fileID: 21300000, guid: 3de310a65596dac4db3d451cde48ff59, type: 3}
-    - {fileID: 21300000, guid: 46b4257c28f94a24bb7a3a2c6b873453, type: 3}
-    - {fileID: 21300000, guid: b1b7eab6e78ced54fb3b72c041107e9b, type: 3}
-    - {fileID: 21300000, guid: d086a0a0c0fcd0948ae5acca51806f5a, type: 3}
-    - {fileID: 21300000, guid: 1bb247417c47f164dafadf5a96bdb4a5, type: 3}
-    - {fileID: 21300000, guid: 1892414a08494c7428cbfdc19fe993ae, type: 3}
-    - {fileID: 21300000, guid: 4a6530cbfd57f7f469edeb6681a75241, type: 3}
-    - {fileID: 21300000, guid: a4466ebb581e7d94c9047c5fc7b7112b, type: 3}
-    - {fileID: 21300000, guid: 53b0e8bb5a7678444bd4edba3961e123, type: 3}
-    - {fileID: 21300000, guid: b811a2db89b0ea245b59eed0ceaf4c7f, type: 3}
-    - {fileID: 21300000, guid: 25e692aacb1fc0c44933057cbff86daf, type: 3}
-    - {fileID: 21300000, guid: ed01a259d899a424880a0e6464dba82a, type: 3}
-    - {fileID: 21300000, guid: 567c4402833f05f4b94bfd1eead731ec, type: 3}
-  rows: 5
-  columns: 6
-  imageSize: {x: 80, y: 80}
-  childIconSize: {x: 50, y: 50}
+    iconsInventory: {fileID: 11400000, guid: 5a13d7e18a683a24f94f5b653680adf6, type: 2}
+  rows: 4
+  columns: 4
+  imageSize: {x: 200, y: 200}
+  childIconSize: {x: 150, y: 150}
   spacing: 10
 --- !u!1 &705507993
 GameObject:
