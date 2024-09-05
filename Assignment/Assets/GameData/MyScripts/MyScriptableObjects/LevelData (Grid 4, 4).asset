@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce4d53f4f306624db2f1aecab536c60, type: 3}
   m_Name: LevelData (Grid 4, 4)
   m_EditorClassIdentifier: 
+  totalScore: 8
   rows: 4
   columns: 4
   imageSize: {x: 200, y: 200}

@@ -8,10 +8,7 @@ namespace GameData.MyScripts
         public static event Action<Card> OnCardCheck;
         public static event Action<bool> OnClickAblesLimitReached;
         public static event Action OnTurnsIncreases;
-        public static event Action OnTurnsResets;
         public static event Action OnScoreIncreases;
-        public static event Action OnScoreResets;
-        public static event Action OnSettingHighScore;
         public static event Action OnLevelEnd;
         public static void InvokeOnCardSelection(Card card)
         {
@@ -29,21 +26,9 @@ namespace GameData.MyScripts
         {
             OnTurnsIncreases?.Invoke();
         }
-        public static void InvokeOnTurnsResets()
-        {
-            OnTurnsResets?.Invoke();
-        }
         public static void InvokeOnScoreIncreases()
         {
             OnScoreIncreases?.Invoke();
-        }
-        public static void InvokeOnScoreResets()
-        {
-            OnScoreResets?.Invoke();
-        }
-        public static void InvokeOnSettingHighScore()
-        {
-            OnSettingHighScore?.Invoke();
         }
         public static void InvokeOnLevelEnd()
         {

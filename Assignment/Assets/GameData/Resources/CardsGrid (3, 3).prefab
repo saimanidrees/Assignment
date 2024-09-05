@@ -1693,6 +1693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083641786807205499}
   - component: {fileID: 2083641786807205496}
+  - component: {fileID: 8172209164641645023}
   m_Layer: 0
   m_Name: CardsGrid (3, 3)
   m_TagString: Untagged
@@ -1753,6 +1754,18 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &8172209164641645023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083641786807205498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279c9c5b12a356449a18aaa091117c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2083641787015214107
 GameObject:
   m_ObjectHideFlags: 0

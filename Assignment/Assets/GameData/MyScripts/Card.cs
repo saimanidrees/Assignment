@@ -7,7 +7,7 @@ namespace GameData.MyScripts
     {
         [SerializeField] private int cardId; // Card Id to compare
         private Animator _animator; // To Play animations
-        private bool _isCurrentlyClicked = false, _isNotClickAble = false; // Flags to control clicking
+        private bool _isCurrentlyClicked = false, _isNotClickAble = true; // Flags to control clicking
         private void OnEnable()
         {
             EventsManager.OnClickAblesLimitReached += SetIsNotClickAble;
@@ -34,14 +34,20 @@ namespace GameData.MyScripts
         {
             if (cardId == otherCard.GetCardId())
             {
-                InvokeDisableCard();
-                otherCard.InvokeDisableCard();
+                if (LevelsHandler.IsPredefinedLevel())
+                {
+                    DataManager.Instance.SavePair(transform.GetSiblingIndex(), otherCard.transform.GetSiblingIndex());
+                }
+                InvokeDisableCard(1.25f);
+                otherCard.InvokeDisableCard(1.25f);
                 EventsManager.InvokeOnScoreIncreases();
+                SoundController.Instance.PlayCorrectSelectionSound();
             }
             else
             {
                 InvokeHideCard();
                 otherCard.InvokeHideCard();
+                SoundController.Instance.PlayWrongSelectionSound();
             }
             EventsManager.InvokeOnTurnsIncreases();
             EventsManager.OnCardCheck -= otherCard.GetCardCheckingCallBack();
@@ -57,16 +63,18 @@ namespace GameData.MyScripts
             _animator.Play(Constants.CardHideString);
             _isCurrentlyClicked = false;
         }
-        private void InvokeDisableCard()
+        public void InvokeDisableCard(float delay)
         {
             Invoke(nameof(DisableCard), 1.25f);
         }
         private void DisableCard()
         {
+            if (!_animator) 
+                _animator = GetComponent<Animator>();
             _animator.Play(Constants.DisableCardString);
             _isCurrentlyClicked = false;
         }
-        private void SetIsNotClickAble(bool flag)
+        public void SetIsNotClickAble(bool flag)
         {
             _isNotClickAble = flag;
         }
@@ -79,6 +87,7 @@ namespace GameData.MyScripts
             if(_isNotClickAble) return;
             if(_isCurrentlyClicked) return;
             _isCurrentlyClicked = true;
+            SoundController.Instance.PlayBtnClickSound();
             if (!_animator) _animator = GetComponent<Animator>();
             _animator.Play(Constants.CardShowString);
             EventsManager.InvokeOnCardSelection(this);

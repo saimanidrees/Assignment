@@ -5,29 +5,22 @@ namespace GameData.MyScripts
     public class StatsHandler : MonoBehaviour
     {
         private int _turnsCount = 0, _scoreCount = 0; // To store values
-        [SerializeField] private Text turnsText, scoreText, highScoreText; // Texts references
-        private const string TurnsString = "Turns: ", ScoreString = "Score: ", HighScoreString = "HighScore: "; // Constants
+        [SerializeField] private Text turnsText, scoreText; // Texts references
+        private const string TurnsString = "Turns: ", ScoreString = "Score: "; // Constants
         private void OnEnable()
         {
             EventsManager.OnTurnsIncreases += IncreaseTurnsCounter;
-            EventsManager.OnTurnsResets += ResetTurnsCounter;
             EventsManager.OnScoreIncreases += IncreaseScoreCounter;
-            EventsManager.OnScoreResets += ResetScoreCounter;
-            EventsManager.OnSettingHighScore += SetHighScore;
         }
         private void OnDisable()
         {
             EventsManager.OnTurnsIncreases -= IncreaseTurnsCounter;
-            EventsManager.OnTurnsResets -= ResetTurnsCounter;
             EventsManager.OnScoreIncreases -= IncreaseScoreCounter;
-            EventsManager.OnScoreResets -= ResetScoreCounter;
-            EventsManager.OnSettingHighScore -= SetHighScore;
         }
         private void IncreaseTurnsCounter()
         {
             _turnsCount++;
             turnsText.text = TurnsString + _turnsCount;
-            SetHighScore();
         }
         private void ResetTurnsCounter()
         {
@@ -38,17 +31,13 @@ namespace GameData.MyScripts
         {
             _scoreCount++;
             scoreText.text = ScoreString + _scoreCount;
+            if(_scoreCount >= LevelsHandler.ScoreToAchieve)
+                EventsManager.InvokeOnLevelEnd();
         }
         private void ResetScoreCounter()
         {
             _scoreCount = 0;
             scoreText.text = ScoreString + _scoreCount;
-        }
-        private void SetHighScore()
-        {
-            if (_scoreCount <= PlayerPrefs.GetInt(Constants.HighScoreString)) return;
-            PlayerPrefs.SetInt(Constants.HighScoreString, _scoreCount);
-            highScoreText.text = HighScoreString + _scoreCount;
         }
     }
 }

@@ -33,6 +33,7 @@ namespace GameData.MyScripts
                     currentLevel.imageSize, currentLevel.childIconSize);
                 imageObject.transform.SetParent(gridObject.transform, false);
             }
+            gridObject.AddComponent<Level>();
         }
     }
 }
